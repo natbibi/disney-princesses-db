@@ -9,6 +9,6 @@ VALUES
     ('Pocahontas', 18, 'Pocahontas', 'indigo'),
     ('Mulan', 16, 'Mulan', 'red'),
     ('Tiana', 19, 'Princess and the Frog', 'green'),
-    ('Rapunzel', 18, 'Tangled', 'lilac')
-    ('Merida', 16, 'Brave', 'orange')
-    ('Moana', 16, 'Moana', 'forest green')
+    ('Rapunzel', 18, 'Tangled', 'lilac'),
+    ('Merida', 16, 'Brave', 'orange'),
+    ('Moana', 16, 'Moana', 'forest green');
