@@ -5,5 +5,5 @@ CREATE TABLE princesses (
     name varchar(20) NOT NULL,
     age int NOT NULL,
     feature_film varchar(50) NOT NULL,
-    fave_color varchar(10)
+    fave_color varchar(15)
 );
