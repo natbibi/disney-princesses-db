@@ -53,12 +53,25 @@ async function renderFeed() {
     const renderPost = postData => {
         const post = document.createElement('div');
         post.className = 'post';
+
+        // must change to pic profile pic depending on user
+        const profilepic = document.createElement('img')
+        profilepic.className = 'profilepic'
+        profilepic.src = `${postData.profilePic}`
+        post.appendChild(profilepic)
+
+        const rightSide = document.createElement('div')
+        rightSide.className = 'right-side'
+        post.appendChild(rightSide)
+
         const user = document.createElement('h3');
+        user.className = 'user-title'
         const body = document.createElement('p');
+        body.className = 'user-post'
         user.textContent = postData.username;
         body.textContent = postData.body;
-        post.appendChild(user);
-        post.appendChild(body);
+        rightSide.appendChild(user);
+        rightSide.appendChild(body);
         feed.appendChild(post);
     }
     posts.forEach(renderPost);
@@ -68,7 +81,7 @@ async function renderFeed() {
 function renderProfile() {
     const profile = document.createElement('section');
     const greeting = document.createElement('h3');
-    greeting.textContent = `Hi there, ${localStorage.getItem('username')}!`;
+    greeting.textContent = `Hi there, Princess ${localStorage.getItem('username')}!`;
     profile.appendChild(greeting);
     main.appendChild(profile);
 }
@@ -77,4 +90,14 @@ function render404() {
     const error = document.createElement('h2');
     error.textContent = "Oops, we can't find that page sorry!";
     main.appendChild(error);
+}
+
+async function renderFeed2() {
+    const feed2 = document.createElement('section');
+    feed2.id = 'feed';
+    const posts2 = await getAllPrincesses();
+    if (posts2.err) { return }
+    const renderPost = princessData => {
+        console.log(princessData)
+    }
 }

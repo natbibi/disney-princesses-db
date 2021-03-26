@@ -2,8 +2,8 @@
 
 body {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #3b5998;
+    font-family: 'Bad Script', cursive;
+    color: #75b9f1;
     font-weight: bold;
 }
 
@@ -40,9 +40,31 @@ nav button, input[type='submit'] {
 
 .post {
     border: 1px solid #ffb9a4;
+    border-radius: 10px;
     text-align: justify;
     padding: 10px 50px;
-    margin: 5px;
+    margin: 10px;
+    display: flex;
+    flex-;
+}
+
+.user-title {
+
+}
+
+.user.post {
+
+}
+
+.profilepic {
+    max-width: 100px;
+    border-radius: 50%;
+    display: flex;
+    margin-right: 10px;
+}
+
+.right-side {
+
 }
 
 form {

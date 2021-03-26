@@ -1,11 +1,11 @@
-async function getAllPrincesses(){
+async function getAllPosts() {
     try {
         const options = {
-            headers: new Headers({'Authorization': localStorage.getItem('token')}),
+            headers: new Headers({ 'Authorization': localStorage.getItem('token') }),
         }
-        const response = await fetch('http://localhost:3000/princesses', options);
+        const response = await fetch('http://localhost:3000/posts', options);
         const data = await response.json();
-        if(data.err){
+        if (data.err) {
             console.warn(data.err);
             logout();
         }
