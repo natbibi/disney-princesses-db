@@ -57,7 +57,9 @@ nav button, input[type='submit'] {
 }
 
 .profilepic {
-    max-width: 100px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
     border-radius: 50%;
     display: flex;
     margin-right: 10px;
