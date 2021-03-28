@@ -90,12 +90,14 @@ input {
     font-size: 50px;
     position: fixed;
     bottom: 0;
+    left: 0;
 }
 
 .new-post-area {
     display: none;
     position: fixed;
-    bottom: 25%;
+    left: 5%;
+    bottom: 10%;
     width: 300px;
     background-color: #ffb9a4;
     border-radius: 4px;
@@ -114,6 +116,16 @@ input {
     border-radius: 3px;
     height: 48px;
     margin-left: 10px;
+}
+
+@media only screen and (min-width: 800px) {
+    .add-new-post {
+        left: 20%;
+    }
+
+    .new-post-area {
+        left: 23%;
+    }
 }
 
 @media only screen and (max-width: 800px) {

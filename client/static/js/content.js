@@ -46,7 +46,8 @@ function renderRegisterForm() {
 }
 
 async function renderFeed() {
-    const feed = document.querySelector('.post-holder');
+    const feed = document.createElement('section')
+    feed.className = "post-holder"
     feed.id = 'feed';
     const posts = await getAllPosts();
     if (posts.err) { return }
@@ -95,7 +96,7 @@ clickIcon.addEventListener('click', () => {
 // submit new post
 // const submitPost = document.querySelector('.sub-btn');
 // submitPost.addEventListener('click', () => {
-    
+
 // })
 
 
