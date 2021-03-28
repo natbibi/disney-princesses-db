@@ -21,6 +21,19 @@ class Post {
             }
         })
     }
+
+    static create(user_id, body) {
+        return new Promise(async (res, rej) => {
+            try {
+                let result = await db.run(SQL`INSERT INTO posts (user_id, body)
+                                                VALUES (${user_id}, ${body}) RETURNING *;`);
+                let post = new Post(result.rows[0]);
+                res(post)
+            } catch (err) {
+                rej(`Error creating user: ${err}`)
+            }
+        })
+    }
 }
 
 module.exports = Post
