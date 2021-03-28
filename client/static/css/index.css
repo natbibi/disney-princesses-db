@@ -1,0 +1,158 @@
+* { box-sizing: border-box; }
+
+body {
+    text-align: center;
+    font-family: 'Bad Script', cursive;
+    color: #75b9f1;
+    font-weight: bold;
+}
+
+nav {
+    position: static;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 75px;
+    background-color: #ffb9a4;
+    color: white;
+}
+
+#logo { width: 80%; }
+
+a { text-decoration: none; }
+
+nav a { color: white; }
+
+nav button, input[type='submit'] { 
+    border: none;
+    color: white;
+    background: #ffb9a4;
+    font-weight: inherit;
+    font-size: inherit;
+    padding: 0;
+}
+
+.post-holder {
+    width: 50%;
+    margin: 20px auto;
+}
+
+.post {
+    border: 1px solid #ffb9a4;
+    border-radius: 10px;
+    text-align: justify;
+    padding: 10px 50px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.user-title {
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.user.post {
+    letter-spacing: 1px;
+}
+
+.profilepic {
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: flex;
+    margin-right: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    margin: 20px auto;
+    width: 50%;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+.disabled {
+    opacity: 0.3;
+}
+
+.add-new-post {
+    color: #ffb9a4;
+    font-size: 50px;
+    position: fixed;
+    bottom: 0;
+}
+
+.new-post-area {
+    display: none;
+    position: fixed;
+    bottom: 25%;
+    width: 300px;
+    background-color: #ffb9a4;
+    border-radius: 4px;
+    align-items: center;
+    padding: 30px;
+}
+
+.text-entry {
+    border-radius: 4px;
+    resize: none;
+}
+
+.submit-btn {
+    background-color: white;
+    border: none;
+    border-radius: 3px;
+    height: 48px;
+    margin-left: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+    .post-holder {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .post-holder {
+        width: 100%;
+    }
+
+    .post {
+        padding: 10px;
+        margin: 10px;
+        padding: 10px;
+    } 
+
+    .add-new-post {
+        bottom: 1;
+        z-index: 1;
+    }
+
+    .profilepic {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+    }
+
+
+    .user-title {
+        font-size: 14px;
+    }
+    
+    .user.post {
+        font-size: 14px;
+    }
+
+  }

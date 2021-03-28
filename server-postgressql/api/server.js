@@ -2,12 +2,17 @@ const express = require('express');
 const cors = require('cors');
 
 const server = express();
+
 server.use(cors());
 server.use(express.json());
 
-const princessRoutes = require('./controllers/princesses')
+const authRoutes = require('./controllers/auth');
+const princessRoutes = require('./controllers/princesses');
+const postRoutes = require('./controllers/posts');
 
-server.use('/princesses', princessRoutes)
+server.use('/auth', authRoutes);
+server.use('/princesses', princessRoutes);
+server.use('/posts', postRoutes);
 
 const port = process.env.PORT || 3000;
 
