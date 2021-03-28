@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="static/css/index.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/98afb65974.js" crossorigin="anonymous"></script>
     <title>Disney Princess Collections</title>
 </head>
 
@@ -25,13 +26,31 @@
         </form>
 
         <button id="status">Check status</button>
+
     </main>
-    
+
+    <div class="post-holder">
+
+
+        <footer class="add-new-post">
+            <div class="new-post-area">
+
+                <textarea class="text-entry" rows="3" maxlength="140" placeholder="Say something!"></textarea>
+                <button class="submit-btn" type="submit">send!</button>
+
+            </div>
+            <i class="fas fa-plus-circle new-post-icon"></i>
+        </footer>
+
+    </div>
+
+
     <script src='https://cdn.jsdelivr.net/npm/jwt-decode@1.5.1/build/jwt-decode.min.js'></script>
     <script src='static/js/auth.js'></script>
     <script src='static/js/requests.js'></script>
     <script src='static/js/content.js'></script>
     <script src='static/js/layout.js'></script>
 </body>
+
 
 </html>

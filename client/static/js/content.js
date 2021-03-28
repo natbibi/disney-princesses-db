@@ -46,24 +46,25 @@ function renderRegisterForm() {
 }
 
 async function renderFeed() {
-    const feed = document.createElement('section');
+    const feed = document.querySelector('.post-holder');
     feed.id = 'feed';
     const posts = await getAllPosts();
     if (posts.err) { return }
     const renderPost = postData => {
         const post = document.createElement('div');
         post.className = 'post';
+        feed.appendChild(post);
 
-        // must change to pic profile pic depending on user
+        // profile pic
         const profilepic = document.createElement('img')
         profilepic.className = 'profilepic'
         profilepic.src = `${postData.profilePic}`
         post.appendChild(profilepic)
 
+        // title and post content 
         const rightSide = document.createElement('div')
         rightSide.className = 'right-side'
         post.appendChild(rightSide)
-
         const user = document.createElement('h3');
         user.className = 'user-title'
         const body = document.createElement('p');
@@ -72,11 +73,31 @@ async function renderFeed() {
         body.textContent = postData.body;
         rightSide.appendChild(user);
         rightSide.appendChild(body);
-        feed.appendChild(post);
+
     }
     posts.forEach(renderPost);
     main.appendChild(feed);
 }
+
+
+// Open textarea to write new Post
+const clickIcon = document.querySelector('.new-post-icon');
+clickIcon.addEventListener('click', () => {
+    const clickIcon = document.querySelector('.new-post-area')
+    if (clickIcon.style.display === 'none') {
+        clickIcon.style.display = 'flex';
+    } else {
+        clickIcon.style.display = 'none';
+    }
+    clickIcon.focus()
+})
+
+// submit new post
+// const submitPost = document.querySelector('.sub-btn');
+// submitPost.addEventListener('click', () => {
+    
+// })
+
 
 function renderProfile() {
     const profile = document.createElement('section');
@@ -92,12 +113,3 @@ function render404() {
     main.appendChild(error);
 }
 
-async function renderFeed2() {
-    const feed2 = document.createElement('section');
-    feed2.id = 'feed';
-    const posts2 = await getAllPrincesses();
-    if (posts2.err) { return }
-    const renderPost = princessData => {
-        console.log(princessData)
-    }
-}
