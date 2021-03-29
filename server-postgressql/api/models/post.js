@@ -13,9 +13,9 @@ class Post {
     static get all() {
         return new Promise(async (res, rej) => {
             try {
-                let result = await db.run(SQL`SELECT posts.*, princesses.username as username
-                                                    FROM posts 
-                                                    JOIN princesses ON posts.user_id = princesses.id;`);
+                let result = await db.run(SQL`SELECT posts.*, princesses.username as username, princesses.profile_pic as profile_pic
+                                                    FROM princesses 
+                                                    JOIN posts ON posts.user_id = princesses.id;`);
                 let posts = result.rows.map(r => new Post(r))
                 res(posts)
             } catch (err) {

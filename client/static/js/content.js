@@ -100,9 +100,9 @@ submitPost.addEventListener('click', () => {
         const textEntry = document.querySelector('.text-entry')
         const commentValue = textEntry.value
         const url = 'http://localhost:3000/posts'
-        const data = { username: currentUserID(), body: commentValue }
+        const data = { username: currentUserID(), body: commentValue, profilepic: currentUserProfile() }
         postData(url, data)
-        console.log(data)
+        updateContent()
     } catch (err) {
         alert("You haven't written anything")
         throw err

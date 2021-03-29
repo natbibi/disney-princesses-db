@@ -37,7 +37,8 @@ function login(token) {
     localStorage.setItem("token", token);
     localStorage.setItem("username", princess.username);
     localStorage.setItem("userEmail", princess.email);
-    localStorage.setItem("userID", princess.user_id);
+    localStorage.setItem("userID", princess.userid);
+    localStorage.setItem("profilepic", princess.profilepic);
     window.location.hash = '#feed';
 }
 
@@ -56,4 +57,9 @@ function currentUserID() {
     const userID = localStorage.getItem('userID')
     return userID;
 
+}
+
+function currentUserProfile() {
+    const profilePic = localStorage.getItem('profilepic')
+    return profilePic;
 }

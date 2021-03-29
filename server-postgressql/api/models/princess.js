@@ -7,13 +7,14 @@ class Princess {
         this.username = data.username
         this.email = data.email
         this.passwordDigest = data.password_digest
+        this.profilepic = data.profile_pic
     }
 
 
     static get all() {
         return new Promise(async (resolve, reject) => {
             try {
-                const princessesData = await db.run(SQL`SELECT * FROM princesses;`)
+                const princessesData = await db.run(SQL`SELECT * FROM princesses`)
                 const princesses = princessesData.rows.map(d => new Princess(d))
                 resolve(princesses);
             } catch (err) {
