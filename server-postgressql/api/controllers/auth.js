@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
 
 const Princess = require('../models/princess');
+// const Post = require('../models/post');
 
 router.post('/register', async (req, res) => {
     try {

@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const { verifyToken } = require('../middleware/auth');
+// const { verifyToken } = require('../middleware/auth');
 
 const Princess = require('../models/princess');
 
 // princess index route
-router.get('/', verifyToken, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const princesses = await Princess.all
         res.json(princesses)
@@ -17,7 +17,7 @@ router.get('/', verifyToken, async (req, res) => {
 
 
 // show princess route
-router.get('/:id', verifyToken, async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const princess = await Princess.findById(parseInt(req.params.id))
         res.json(princess)
