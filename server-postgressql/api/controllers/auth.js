@@ -27,7 +27,7 @@ router.post('/login', async (req, res) => {
         if (!princess) { throw new Error('No user with this email') }
         const authed = bcrypt.compare(req.body.password, princess.passwordDigest)
         if (!!authed) {
-            const payload = { username: princess.username, email: princess.email, userid: princess.id }
+            const payload = { username: princess.username, email: princess.email, userid: princess.id, profilepic: princess.profilepic }
             const sendToken = (err, token) => {
                 if (err) { throw new Error('Error in token generation') }
                 res.status(200).json({
