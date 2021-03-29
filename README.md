@@ -18,13 +18,13 @@ Open the terminal:
     `cd server-mongodb`
      `docker-compose up`
 
-To stop and keep data 
-   `docker-compose down`
-To stop and remove all artifacts 
-    `docker-compose down --volumes --remove-orphans`
+To stop and keep data      
+   `docker-compose down`  
+To stop and remove all artifacts       
+    `docker-compose down --volumes --remove-orphans`   
 
 # Technologies
-bcrypt, dotenv,  jsonwebtoken
+bcrypt, dotenv,  jsonwebtoken     
 cors, express, postgress, sql-template-strings
     
 # Changelog or Process 
