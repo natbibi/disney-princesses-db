@@ -7,6 +7,7 @@ class Princess {
         this.username = data.username
         this.email = data.email
         this.passwordDigest = data.password_digest
+        this.profilepic = data.profile_pic
     }
 
 
