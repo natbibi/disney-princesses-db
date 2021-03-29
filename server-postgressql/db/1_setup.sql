@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS posts;
 
 CREATE TABLE posts (
     id serial PRIMARY KEY,
-    user_id int,
+    user_id INT NOT NULL,
     body varchar(200) NOT NULL,
     profile_pic varchar(500)
 );
