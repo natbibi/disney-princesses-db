@@ -23,4 +23,23 @@ router.post('/', async (req, res) => {
     }
 })
 
+// show post route
+router.get('/postid/:id', async (req, res) => {
+    try {
+        const post = await Post.findByPostID(parseInt(req.params.id))
+        res.json(post)
+    } catch (err) {
+        res.status(404).json({ err })
+    }
+})
+
+router.get('/userid/:user_id', async (req, res) => {
+    try {
+        const post = await Post.findByPrincessID(parseInt(req.params.user_id))
+        res.json(post)
+    } catch (err) {
+        res.status(404).json({ err })
+    }
+})
+
 module.exports = router

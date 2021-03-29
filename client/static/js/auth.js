@@ -1,4 +1,4 @@
-async function requestLogin(e){
+async function requestLogin(e) {
     e.preventDefault();
     try {
         const options = {
@@ -25,27 +25,35 @@ async function requestRegistration(e) {
         }
         const r = await fetch(`http://localhost:3000/auth/register`, options)
         const data = await r.json()
-        if (data.err){ throw Error(data.err) }
+        if (data.err) { throw Error(data.err) }
         requestLogin(e);
     } catch (err) {
         console.warn(err);
     }
 }
 
-function login(token){
-    const user = jwt_decode(token);
+function login(token) {
+    const princess = jwt_decode(token);
     localStorage.setItem("token", token);
-    localStorage.setItem("username", user.username);
-    localStorage.setItem("userEmail", user.email);
+    localStorage.setItem("username", princess.username);
+    localStorage.setItem("userEmail", princess.email);
+    localStorage.setItem("userID", princess.user_id);
     window.location.hash = '#feed';
 }
 
-function logout(){
+
+function logout() {
     localStorage.clear();
     window.location.hash = '#login';
 }
 
-function currentUser(){
+function currentUser() {
     const username = localStorage.getItem('username')
     return username;
+}
+
+function currentUserID() {
+    const userID = localStorage.getItem('userID')
+    return userID;
+
 }
