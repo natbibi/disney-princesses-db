@@ -7,7 +7,6 @@ const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
 
 const Princess = require('../models/princess');
-// const Post = require('../models/post');
 
 router.post('/register', async (req, res) => {
     try {
@@ -28,7 +27,7 @@ router.post('/login', async (req, res) => {
         if (!princess) { throw new Error('No user with this email') }
         const authed = bcrypt.compare(req.body.password, princess.passwordDigest)
         if (!!authed) {
-            const payload = { username: princess.username, email: princess.email }
+            const payload = { username: princess.username, email: princess.email, userid: princess.id }
             const sendToken = (err, token) => {
                 if (err) { throw new Error('Error in token generation') }
                 res.status(200).json({

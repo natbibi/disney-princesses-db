@@ -13,7 +13,7 @@ class Princess {
     static get all() {
         return new Promise(async (resolve, reject) => {
             try {
-                const princessesData = await db.run(SQL`SELECT * FROM princesses;`)
+                const princessesData = await db.run(SQL`SELECT * FROM princesses`)
                 const princesses = princessesData.rows.map(d => new Princess(d))
                 resolve(princesses);
             } catch (err) {

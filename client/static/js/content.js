@@ -102,7 +102,7 @@ submitPost.addEventListener('click', () => {
         const url = 'http://localhost:3000/posts'
         const data = { username: currentUserID(), body: commentValue }
         postData(url, data)
-        console.log(data)
+        updateContent()
     } catch (err) {
         alert("You haven't written anything")
         throw err

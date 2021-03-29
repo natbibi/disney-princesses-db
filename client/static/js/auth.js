@@ -37,7 +37,7 @@ function login(token) {
     localStorage.setItem("token", token);
     localStorage.setItem("username", princess.username);
     localStorage.setItem("userEmail", princess.email);
-    localStorage.setItem("userID", princess.user_id);
+    localStorage.setItem("userID", princess.userid);
     window.location.hash = '#feed';
 }
 
