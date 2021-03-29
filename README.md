@@ -41,12 +41,12 @@ cors, express, postgress, sql-template-strings
                             -> relative paths
 - [x] Unable to fetch multiple routes
 - [x] Unable to escape ' in string in postgres database - use '' e.g I''m
-- [ ] When making a POST request, how to change username input into user_id in database
+- [ ] When making a POST request, how to change username input into user_id in database    
         - [x] POST request takes userID info from local storage
-        - [x] Join username with userID and return one
-        - [x] Add userID and profile pic info to JWT token
-        - [x] Extract userID and profile from JWT and add to local storage
-        - [x] Current user sends POST request with userID and profilepic from local storage
+        - [x] Join username with userID and return one   
+        - [x] Add userID and profile pic info to JWT token    
+        - [x] Extract userID and profile from JWT and add to local storage   
+        - [x] Current user sends POST request with userID and profilepic from local storage   
     
 # Future Features 
 - New user can change their profile pic (update route)
